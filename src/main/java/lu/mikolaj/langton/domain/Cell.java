@@ -5,13 +5,13 @@ public class Cell {
     private int coordinateY;
     private Color color;
 
-    Cell(Color color, int coordinateX, int coordinateY) {
+    public Cell(Color color, int coordinateX, int coordinateY) {
         this.color = color;
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
     }
 
-    void turnColor() {
+    public void turnColor() {
         if (this.color.equals(Color.WHITE)) {
             this.color = Color.BLACK;
         } else {
@@ -19,7 +19,7 @@ public class Cell {
         }
     }
 
-    Color getColor() {
+    public Color getColor() {
         return color;
     }
 
