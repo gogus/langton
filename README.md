@@ -15,6 +15,8 @@ $ docker build -t langton:latest .
 $ docker run -p 8080:8080 langton:latest
 ```
 
+Service will be available under: http://localhost:8080
 
 ## OpenAPI Documentation
-[Available here](https://github.com/gogus/langton/blob/master/doc/openapi.yml)
+- [Swagger UI](http://petstore.swagger.io/?url=https://raw.githubusercontent.com/gogus/langton/master/doc/openapi.yml)
+- [Raw file](https://github.com/gogus/langton/blob/master/doc/openapi.yml)
