@@ -17,6 +17,11 @@ $ docker run -p 8080:8080 langton:latest
 
 Service will be available under: http://localhost:8080
 
+### Example simulation call
+```bash
+$ curl -X PUT "http://127.0.0.1:8080/simulate?steps=30000" > sim.png
+```
+
 ## OpenAPI Documentation
 - [Swagger UI](http://petstore.swagger.io/?url=https://raw.githubusercontent.com/gogus/langton/master/doc/openapi.yml)
 - [Raw file](https://github.com/gogus/langton/blob/master/doc/openapi.yml)
