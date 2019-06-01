@@ -47,14 +47,12 @@ public class WorldView {
         graphics2D.setPaint( Color.BLACK);
 
         for (Cell cell: this.world.getBlackCells()) {
-            if (cell.getColor().equals(lu.mikolaj.langton.domain.Color.BLACK)) {
-                graphics2D.drawLine(
-                    centerX + cell.getCoordinateX(),
-                    centerY + cell.getCoordinateY(),
-                    centerX + cell.getCoordinateX(),
-                    centerY + cell.getCoordinateY()
-                );
-            }
+            graphics2D.drawLine(
+                centerX + cell.getCoordinateX(),
+                centerY + cell.getCoordinateY(),
+                centerX + cell.getCoordinateX(),
+                centerY + cell.getCoordinateY()
+            );
         }
 
         graphics2D.dispose();

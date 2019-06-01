@@ -19,7 +19,7 @@ public class Cell {
         }
     }
 
-    public Color getColor() {
+    Color getColor() {
         return color;
     }
 

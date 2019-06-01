@@ -1,0 +1,24 @@
+openapi: "3.0.0"
+info:
+  title: Langton Ant's
+  version: 2.0.0
+paths:
+  /simulate:
+    put:
+      tags:
+        - simulate
+      summary: Simulate langton ant steps
+      parameters:
+        - in: query
+          schema:
+            type: integer
+            minimum: 0
+          name: steps
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
