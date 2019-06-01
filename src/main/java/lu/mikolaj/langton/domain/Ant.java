@@ -1,4 +1,4 @@
-package lu.mikolaj.langton.entity;
+package lu.mikolaj.langton.domain;
 
 import java.util.HashMap;
 
@@ -6,7 +6,7 @@ public class Ant {
     private Direction direction;
     private Cell currentCell;
 
-    public Ant(Cell currentCell) {
+    Ant(Cell currentCell) {
         this.direction = Direction.EAST;
         this.currentCell = currentCell;
     }
@@ -14,7 +14,7 @@ public class Ant {
     public void turnDirection() {
         HashMap<Direction, Direction> turnMap = new HashMap<>();
 
-        if (this.currentCell.getColor().equal(Color.WHITE))
+        if (this.currentCell.getColor().equals(Color.WHITE))
         {
             turnMap.put(Direction.EAST, Direction.SOUTH);
             turnMap.put(Direction.SOUTH, Direction.WEST);
@@ -25,7 +25,7 @@ public class Ant {
         }
 
 
-        if (this.currentCell.getColor().equal(Color.BLACK))
+        if (this.currentCell.getColor().equals(Color.BLACK))
         {
             turnMap.put(Direction.EAST, Direction.NORTH);
             turnMap.put(Direction.SOUTH, Direction.EAST);
@@ -36,9 +36,9 @@ public class Ant {
         }
     }
 
-    public void moveForward() {
-        Integer coordinateX = this.currentCell.getCoordinateX();
-        Integer coordinateY = this.currentCell.getCoordinateY();
+    public void moveForward(World world) {
+        int coordinateX = this.currentCell.getCoordinateX();
+        int coordinateY = this.currentCell.getCoordinateY();
 
         if (this.direction.equals(Direction.WEST)) {
             coordinateX = coordinateX - 1;
@@ -57,14 +57,21 @@ public class Ant {
         }
 
         this.currentCell.turnColor();
-        this.currentCell = new Cell(Color.WHITE, coordinateX, coordinateY);
+        if (this.currentCell.getColor().equals(Color.BLACK)) {
+            world.addBlackCell(this.getCurrentCell());
+        } else {
+            world.removeBlackCell(this.getCurrentCell());
+        }
+
+        Cell existingCell = world.findBlackCell(coordinateX, coordinateY);
+        if (existingCell != null) {
+            this.currentCell = existingCell;
+        } else {
+            this.currentCell = new Cell(Color.WHITE, coordinateX, coordinateY);
+        }
     }
 
-    public Cell getCurrentCell() {
+    Cell getCurrentCell() {
         return currentCell;
-    }
-
-    public void setCurrentCell(Cell currentCell) {
-        this.currentCell = currentCell;
     }
 }

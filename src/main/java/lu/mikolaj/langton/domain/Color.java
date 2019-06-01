@@ -1,4 +1,4 @@
-package lu.mikolaj.langton.entity;
+package lu.mikolaj.langton.domain;
 
 public enum Color {
     WHITE("White"),
@@ -8,10 +8,6 @@ public enum Color {
 
     Color(String color) {
         this.color = color;
-    }
-
-    public boolean equal(Color color) {
-        return this.toString().equals(color.toString());
     }
 
     @Override

@@ -1,4 +1,4 @@
-package lu.mikolaj.langton.entity;
+package lu.mikolaj.langton.domain;
 
 public enum Direction {
     EAST("East"),
@@ -10,10 +10,6 @@ public enum Direction {
 
     Direction(String direction) {
         this.direction = direction;
-    }
-
-    public boolean equals(Direction direction) {
-        return direction.toString().equals(this.toString());
     }
 
     @Override
