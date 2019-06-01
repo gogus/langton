@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 info:
   title: Langton Ant's
-  version: 2.0.0
+  version: 1.0.0
 paths:
   /simulate:
     put:
@@ -22,3 +22,5 @@ paths:
               schema:
                 type: string
                 format: binary
+        '400':
+          description: 'Bad request'
