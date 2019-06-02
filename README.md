@@ -1,4 +1,6 @@
 # Langton's Ant as a Service
+[![CircleCI](https://circleci.com/gh/gogus/langton.svg?style=svg)](https://circleci.com/gh/gogus/langton)
+
 Application providing graphical simulation of Langton's Ant via HTTP interface.
 
 Wiki: https://en.wikipedia.org/wiki/Langton%27s_ant
