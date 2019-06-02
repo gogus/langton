@@ -31,3 +31,4 @@ $ curl -X PUT "http://127.0.0.1:8080/simulate?steps=30000" > sim.png
 ## Improvements
 - Full coverage unit tests
 - API Tests
+- Add limitation for host to create simulation which will take too much time
