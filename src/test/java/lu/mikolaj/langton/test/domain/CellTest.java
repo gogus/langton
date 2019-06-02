@@ -19,4 +19,12 @@ public class CellTest {
 
         assertThat(cell.getColor()).isEqualTo(Color.BLACK);
     }
+
+    @Test
+    public void testTurnColorBlack() {
+        Cell cell = new Cell(Color.BLACK, 0, 0);
+        cell.turnColor();
+
+        assertThat(cell.getColor()).isEqualTo(Color.WHITE);
+    }
 }

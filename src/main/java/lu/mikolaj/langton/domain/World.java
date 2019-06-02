@@ -19,7 +19,7 @@ public class World {
         return blackCells;
     }
 
-    Cell findBlackCell(int coordinateX, int coordinateY) {
+    public Cell findBlackCell(int coordinateX, int coordinateY) {
         for (Cell cell : this.blackCells) {
             if (cell.getCoordinateX() == coordinateX && cell.getCoordinateY() == coordinateY) {
                 return cell;
@@ -33,7 +33,7 @@ public class World {
         return ant;
     }
 
-    void addBlackCell(Cell cell) {
+    public void addBlackCell(Cell cell) {
         Cell foundCell = this.findBlackCell(ant.getCurrentCell().getCoordinateX(), ant.getCurrentCell().getCoordinateY());
 
         if (foundCell != null) {
@@ -43,7 +43,7 @@ public class World {
         this.blackCells.add(cell);
     }
 
-    void removeBlackCell(Cell cell) {
+    public void removeBlackCell(Cell cell) {
         Cell foundCell = this.findBlackCell(cell.getCoordinateX(), cell.getCoordinateY());
 
         if (foundCell != null) {

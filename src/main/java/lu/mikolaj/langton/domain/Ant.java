@@ -74,4 +74,8 @@ public class Ant {
     Cell getCurrentCell() {
         return currentCell;
     }
+
+    public Direction getDirection() {
+        return direction;
+    }
 }
