@@ -6,8 +6,8 @@ jobs:
     working_directory: ~/langton
     steps:
       - checkout
-      - run: ./gradlew build
-      - run: ./gradlew :cleanTest :test --tests "lu.mikolaj.langton.test.*"
+      - run: gradle build
+      - run: gradle :cleanTest :test --tests "lu.mikolaj.langton.test.*"
       - store_artifacts:
           path: build/libs
           destination: langton
