@@ -1,8 +1,8 @@
-FROM openjdk:8-jdk-alpine
+FROM openjdk:11-jdk-slim
 
 RUN mkdir -p /app
 COPY . /app/
 WORKDIR /app/
 
 RUN ["./gradlew", "build"]
-CMD ["/usr/bin/java", "-jar", "./build/libs/langtons-ant-http-1.0.jar"]
+CMD ["java", "-jar", "./build/libs/langtons-ant-http-1.0.jar"]
